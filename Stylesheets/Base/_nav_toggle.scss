@@ -1,0 +1,180 @@
+#nav_toggle {
+  display: none;
+}
+
+#nav_toggle:checked + .sidebar {
+  width: 70px;
+}
+
+#nav_toggle:checked + .sidebar {
+  .sidebar__logo {
+    h2 {
+      span:last-child {
+        display: none;
+      }
+    }
+  }
+  .sidebar__menu {
+    ul {
+      li {
+        a {
+          span:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+#nav_toggle:checked + .sidebar {
+  .sidebar__logo {
+    padding-left: 16px;
+    text-align: center;
+  }
+  .sidebar__menu {
+    ul {
+      li {
+        padding-left: 16px;
+        text-align: center;
+
+        a {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+//
+
+#nav_toggle:checked ~ .main {
+  margin-left: 70px;
+  transition: margin-left 300ms;
+
+  header {
+    width: calc(100% - 70px);
+    left: 70px;
+  }
+}
+
+// Responsive start
+@include mobile {
+  #nav_toggle:checked + .sidebar {
+    width: 345px;
+    left: 0;
+    z-index: 200;
+  }
+
+  #nav_toggle:checked + .sidebar {
+    .sidebar__logo {
+      h2 {
+        span:last-child {
+          display: inline;
+        }
+      }
+    }
+    .sidebar__menu {
+      ul {
+        li {
+          a {
+            span:last-child {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #nav_toggle:checked + .sidebar {
+    .sidebar__logo {
+      padding-left: 32px;
+      text-align: left;
+    }
+    .sidebar__menu {
+      ul {
+        li {
+          padding-left: 32px;
+          text-align: left;
+
+          a {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  //
+
+  #nav_toggle:checked ~ .main {
+    margin-left: 0;
+    transition: margin-left 300ms;
+
+    header {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+@include tablet {
+  #nav_toggle:checked + .sidebar {
+    width: 345px;
+    left: 0;
+    z-index: 200;
+  }
+
+  #nav_toggle:checked + .sidebar {
+    .sidebar__logo {
+      h2 {
+        span:last-child {
+          display: inline;
+        }
+      }
+    }
+    .sidebar__menu {
+      ul {
+        li {
+          a {
+            span:last-child {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #nav_toggle:checked + .sidebar {
+    .sidebar__logo {
+      padding-left: 32px;
+      text-align: left;
+    }
+    .sidebar__menu {
+      ul {
+        li {
+          padding-left: 32px;
+          text-align: left;
+
+          a {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  //
+
+  #nav_toggle:checked ~ .main {
+    margin-left: 0;
+    transition: margin-left 300ms;
+
+    header {
+      width: 100%;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+header {
+  background: #fff;
+  @include flexBox(space-between, center);
+  padding: 16px 24px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 345px;
+  width: calc(100% - 345px);
+  z-index: 9;
+  transition: left 300ms;
+
+  @include mobile {
+    width: 100%;
+    left: 0;
+  }
+
+  @include tablet {
+    width: 100%;
+    left: 0;
+  }
+
+  h2 {
+    color: #222;
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    label {
+      span {
+        padding-right: 16px;
+        font-size: 27px;
+
+        @include mobile {
+          font-size: 20px;
+          background: $main_color;
+          padding: 8px;
+          color: #fff;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+        @include tablet {
+          font-size: 20px;
+          background: $main_color;
+          padding: 8px;
+          color: #fff;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .search {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 50px;
+    @include flexBox(flex-start, center);
+    overflow: hidden;
+
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+
+    span {
+      display: inline-block;
+      padding: 0 16px;
+      font-size: 24px;
+    }
+
+    input {
+      height: 100%;
+      padding: 8px;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .user {
+    @include flexBox(flex-start, center);
+
+    img {
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+
+    small {
+      display: inline-block;
+      color: $color_grey;
+    }
+  }
+}

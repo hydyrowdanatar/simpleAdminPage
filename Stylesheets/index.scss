@@ -1,0 +1,206 @@
+@import "./Base/reset", "./Base/variables", "./Base/mixins", "./Base/nav_toggle";
+// sections of indexs page
+@import "./sidebar/sidebar";
+
+// Main section start
+.main {
+  transition: margin-left 300ms;
+  margin-left: 345px;
+
+  @include mobile {
+    width: 100%;
+    margin: 0;
+  }
+  @include tablet {
+    width: 100%;
+    margin: 0;
+  }
+
+  @import "./Base/header";
+
+  .home {
+    margin-top: 85px;
+    background: #f1f5f9;
+    padding: 32px 24px;
+    min-height: calc(100vh - 90px);
+
+    // Cards start
+    .cards {
+      // @include grid(space-between, center);
+      // grid-template-columns: 25% 25% 25% 25%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 32px;
+      margin-top: 16px;
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include mobile {
+        grid-template-columns: 100%;
+      }
+
+      .card {
+        @include flexBox(space-between, flex-start);
+        background: #fff;
+        padding: 32px;
+        border-radius: 2px;
+
+        h1 + span {
+          color: $color_grey;
+        }
+
+        div:last-child {
+          span {
+            color: $main_color;
+            font-size: 48px;
+          }
+        }
+      }
+    }
+    // Cards end
+
+    // Grids start
+    .grids {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: 65% auto;
+      grid-gap: 32px;
+
+      @include tablet {
+        grid-template-columns: 60% 40%;
+      }
+      @include mobile {
+        grid-template-columns: 100%;
+      }
+
+      // projects...
+      .projects {
+        .card {
+          background: #fff;
+          border-radius: 5px;
+
+          &__header {
+            padding: 16px;
+          }
+          &__header {
+            @include flexBox(space-between, center);
+            border-bottom: 1px solid #f0f0f0;
+
+            button {
+              background: $main_color;
+              border-radius: 10px;
+              color: #fff;
+              font-size: 13px;
+              padding: 8px 16px;
+              border: 1px solid $main_color;
+            }
+          }
+
+          &__body {
+            table {
+              border-collapse: collapse;
+              td {
+                padding: 8px 16px;
+                font-size: 14px;
+                color: #222;
+
+                &:last-child {
+                  @include flexBox(flex-start, center);
+                }
+
+                .status {
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  margin-right: 16px;
+                }
+                .purple {
+                  background: rebeccapurple;
+                }
+                .pink {
+                  background: deeppink;
+                }
+                .orange {
+                  background: orangered;
+                }
+              }
+
+              thead {
+                tr {
+                  border-top: 1px solid #f0f0f0;
+                  border-bottom: 2px solid #f0f0f0;
+                }
+                td {
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // customers...
+      .customers {
+        .card {
+          background: #fff;
+          border-radius: 5px;
+
+          &__header {
+            padding: 16px;
+          }
+          &__header {
+            @include flexBox(space-between, center);
+            border-bottom: 1px solid #f0f0f0;
+
+            button {
+              background: $main_color;
+              border-radius: 10px;
+              color: #fff;
+              font-size: 13px;
+              padding: 8px 16px;
+              border: 1px solid $main_color;
+            }
+          }
+
+          &__body {
+            .customer {
+              @include flexBox(space-between, center);
+              padding: 8px 16px;
+
+              .info {
+                @include flexBox(flex-start, center);
+
+                img {
+                  border-radius: 50%;
+                  margin-right: 16px;
+                }
+
+                h4 {
+                  font-size: 13px;
+                  color: #222;
+                  font-weight: 700;
+                }
+
+                small {
+                  font-weight: 600;
+                  color: $color_grey;
+                }
+              }
+
+              .contact {
+                span {
+                  font-size: 19px;
+                  margin-left: 8px;
+                  color: $main_color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // Grids end
+  }
+}
